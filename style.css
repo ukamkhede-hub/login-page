@@ -1,133 +1,145 @@
-body{
-background-color:#f2f2f2;
-font-family:Arial;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.login-box{
-width:300px;
-margin:100px auto;
-padding:20px;
-background:white;
-border-radius:10px;
-box-shadow:0 0 10px gray;
-text-align:center;
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #74ebd5,
+        #ACB6E5
+    );
 }
 
-input{
-width:90%;
-padding:10px;
-}
+.login-box {
+    width: 350px;
+    background: white;
+    padding: 30px;
 
-button{
-padding:10px 20px;
-background:blue;
-color:white;
-border:none;
-border-radius:5px;
-cursor:pointer;
-}
-button{
-    background-color: blue;
-    color: white;
-    padding: 10px 25px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 15px;
+
+    box-shadow: 
+        0 0 20px rgba(0, 0, 0, 0.2);
+
+    text-align: center;
+
     transition: 0.3s;
 }
-button:hover{
-    background-color: darkblue;
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
-}
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+
+.login-box:hover {
+    box-shadow: 
+        0 0 25px rgba(0, 0, 0, 0.3);
 }
 
-body{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-    font-family:Arial, sans-serif;
-    background:linear-gradient(135deg,#74ebd5,#ACB6E5);
+h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
 }
 
-.login-box{
-    width:350px;
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 0 20px rgba(0,0,0,0.2);
-    text-align:center;
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+
+    padding: 12px;
+    margin: 10px 0;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    font-size: 15px;
 }
 
-h2{
-    margin-bottom:20px;
-}
-
-input{
-    width:100%;
-    padding:12px;
-    margin:10px 0;
-    border:1px solid #ccc;
-    border-radius:8px;
-}
-
-button{
-    padding:12px 25px;
-    border:none;
-    border-radius:8px;
-    background-color:#007BFF;
-    color:white;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-button:hover{
-    background-color:#0056b3;
-    transform:scale(1.1);
-    box-shadow:0 0 15px rgba(0,0,0,0.3);
-}
-
-/* Responsive Design */
-@media (max-width:768px){
-    .login-box{
-        width:90%;
-        padding:20px;
-    }
-
-    h2{
-        font-size:28px;
-    }
-
-    button{
-        width:100%;
-    }
-}
-button:hover{
-    background-color: #0056b3;
-    transform: scale(1.05);
-    transition: 0.3s;
-    cursor: pointer;
-}
-input:focus{
+input[type="text"]:focus,
+input[type="password"]:focus {
     border: 2px solid #007BFF;
     outline: none;
 }
-@media (max-width: 480px){
-    .login-box{
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 10px 0 15px;
+    font-size: 13px;
+}
+
+.options input {
+    width: auto;
+}
+
+.options a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.options a:hover {
+    text-decoration: underline;
+}
+
+.remember {
+    display: block;
+    margin-bottom: 15px;
+
+    font-size: 14px;
+}
+
+.remember input {
+    width: auto;
+}
+
+button {
+    width: 100%;
+
+    padding: 12px 25px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #007BFF;
+    color: white;
+
+    font-size: 16px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+
+    box-shadow: 
+        0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+
+@media (max-width: 480px) {
+
+    .login-box {
         width: 90%;
         padding: 20px;
     }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .options {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    button {
+        width: 100%;
+    }
 }
-.login-box:hover{
-    box-shadow: 0 0 25px rgba(0,0,0,0.3);
-    transition: 0.3s;
-}
-<input type="password" id="password">
-<input type="checkbox" onclick="showPassword()"> Show Password
-<a href="#">Forgot Password?</a>
-<input type="checkbox"> Remember Me

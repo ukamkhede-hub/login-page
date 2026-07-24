@@ -1,23 +1,55 @@
+```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Login Page</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login Page</title>
+
+    <!-- CSS File Connect -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="login-box">
-<h2>Login</h2>
+    <div class="login-box">
 
-<input type="email" placeholder="Enter Email">
-<br><br>
+        <h2>Login</h2>
 
-<input type="password" placeholder="Enter Password">
-<br><br>
+        <form>
 
-<button>Login</button>
+            <input 
+                type="text" 
+                placeholder="Enter Username"
+                required
+            >
 
-</div>
+            <input 
+                type="password" 
+                placeholder="Enter Password"
+                required
+            >
+
+            <div class="options">
+
+                <label>
+                    <input type="checkbox">
+                    Remember Me
+                </label>
+
+                <a href="#">Forgot Password?</a>
+
+            </div>
+
+            <button type="submit">
+                Login
+            </button>
+
+        </form>
+
+    </div>
 
 </body>
 </html>
+```
