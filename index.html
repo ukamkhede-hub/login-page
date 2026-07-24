@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -66,13 +67,14 @@
             let username = document.getElementById("username").value;
             let password = document.getElementById("password").value;
 
-            // Correct Username and Password
             if (username === "Umesh" && password === "Umesh123") {
 
+                // Successful Login
                 window.location.href = "dashboard.html";
 
             } else {
 
+                // Wrong Username or Password
                 document.getElementById("message").innerHTML =
                     "Invalid Username or Password!";
 
@@ -85,55 +87,5 @@
     </script>
 
 </body>
-</html>
-    <script>
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
 
-            event.preventDefault();
-
-            let username = document.getElementById("username").value;
-            let password = document.getElementById("password").value;
-
-            if (username === "Umesh" && password === "Umesh123") {
-
-                window.location.href = "dashboard.html";
-
-            } else {
-
-                document.getElementById("message").innerHTML =
-                    "Invalid Username or Password!";
-
-                document.getElementById("message").style.color = "red";
-
-            }
-
-        });
-    </script>
-
-</body>
-<script>
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
-
-            event.preventDefault();
-
-            let username = document.getElementById("username").value;
-            let password = document.getElementById("password").value;
-
-            if (username === "Umesh" && password === "Umesh123") {
-
-                window.location.href = "dashboard.html";
-
-            } else {
-
-                document.getElementById("message").innerHTML =
-                    "Invalid Username or Password!";
-
-                document.getElementById("message").style.color = "red";
-
-            }
-
-        });
-    </script>
-
-</body>
 </html>
