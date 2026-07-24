@@ -143,3 +143,8 @@ button:hover {
         width: 100%;
     }
 }
+.welcome-text {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
