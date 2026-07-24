@@ -127,3 +127,7 @@ input:focus{
     box-shadow: 0 0 25px rgba(0,0,0,0.3);
     transition: 0.3s;
 }
+<input type="password" id="password">
+<input type="checkbox" onclick="showPassword()"> Show Password
+<a href="#">Forgot Password?</a>
+<input type="checkbox"> Remember Me
