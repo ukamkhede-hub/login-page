@@ -536,3 +536,25 @@ body {
     }
 
 }
+.resume-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.resume-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #667eea;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.resume-btn:hover {
+    background: #764ba2;
+    transform: translateY(-3px);
+}
