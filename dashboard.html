@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,98 +9,231 @@
 
     <style>
 
+        /* =========================
+           RESET
+        ========================= */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* =========================
+           BODY
+        ========================= */
+
         body {
             font-family: Arial, sans-serif;
-    min-height: 100vh;
 
-    background: linear-gradient(
-        135deg,
-        #667eea,
-        #764ba2,
-        #f093fb
-    );
-}
+            background: #f4f7fb;
 
-        /* Navigation Bar */
+            color: #333;
 
-        nav {
-            background: #007BFF;
+            transition: 0.3s;
+        }
+
+        /* =========================
+           SIDEBAR
+        ========================= */
+
+        .sidebar {
+            position: fixed;
+
+            left: 0;
+            top: 0;
+
+            width: 240px;
+            height: 100vh;
+
+            background: linear-gradient(
+                180deg,
+                #667eea,
+                #764ba2
+            );
+
             color: white;
 
-            padding: 15px 30px;
+            padding: 25px 15px;
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            box-shadow:
+                3px 0 15px rgba(0, 0, 0, 0.2);
         }
 
-        nav h2 {
-            font-size: 22px;
+        .sidebar h2 {
+            text-align: center;
+
+            margin-bottom: 35px;
         }
 
-        nav ul {
+        .sidebar ul {
             list-style: none;
-
-            display: flex;
-            gap: 25px;
         }
 
-        nav ul li a {
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+
+        .sidebar ul li a {
+            display: block;
+
+            padding: 12px 15px;
+
             color: white;
+
             text-decoration: none;
 
-            font-size: 16px;
-            cursor: pointer;
+            border-radius: 8px;
+
+            transition: 0.3s;
         }
 
-        nav ul li a:hover {
-            text-decoration: underline;
+        .sidebar ul li a:hover {
+            background: rgba(255, 255, 255, 0.2);
+
+            transform: translateX(5px);
         }
 
-        /* Main Content */
+        /* =========================
+           MAIN CONTENT
+        ========================= */
 
-        .container {
-            padding: 50px;
-            text-align: center;
+        .main {
+            margin-left: 240px;
+
+            padding: 30px;
         }
 
-        .container h1 {
-    color: white;
-    margin-bottom: 15px;
-}
+        /* =========================
+           TOP BAR
+        ========================= */
 
-        .container p {
-    color: white;
-    font-size: 18px;
-}
-
-        /* Cards */
-
-        .cards {
+        .topbar {
             display: flex;
-            justify-content: center;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 30px;
+        }
+
+        .topbar h1 {
+            color: #667eea;
+        }
+
+        /* =========================
+           DARK MODE BUTTON
+        ========================= */
+
+        .dark-btn {
+            padding: 10px 18px;
+
+            border: none;
+
+            border-radius: 20px;
+
+            background: #333;
+
+            color: white;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .dark-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* =========================
+           PROFILE SECTION
+        ========================= */
+
+        .profile {
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 15px;
+
+            display: flex;
+
+            align-items: center;
+
             gap: 25px;
 
-            margin-top: 40px;
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.1);
 
-            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .profile-icon {
+            width: 90px;
+            height: 90px;
+
+            border-radius: 50%;
+
+            background: linear-gradient(
+                135deg,
+                #667eea,
+                #764ba2
+            );
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            color: white;
+
+            font-size: 40px;
+        }
+
+        .profile h2 {
+            margin-bottom: 8px;
+
+            color: #667eea;
+        }
+
+        .profile p {
+            color: #666;
+        }
+
+        /* =========================
+           SECTION TITLE
+        ========================= */
+
+        .section-title {
+            margin: 30px 0 20px;
+
+            color: #667eea;
+        }
+
+        /* =========================
+           PROJECT CARDS
+        ========================= */
+
+        .projects {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 25px;
         }
 
         .card {
             background: white;
 
-            width: 250px;
-            padding: 30px;
+            padding: 25px;
 
-            border-radius: 12px;
+            border-radius: 15px;
 
-            box-shadow: 0 0 15px rgba(0,0,0,0.15);
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.1);
 
             transition: 0.3s;
         }
@@ -107,156 +241,483 @@
         .card:hover {
             transform: translateY(-8px);
 
-            box-shadow: 0 0 25px rgba(0,0,0,0.25);
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         .card h3 {
-            color: #007BFF;
-            margin-bottom: 10px;
+            color: #667eea;
+
+            margin-bottom: 12px;
         }
 
         .card p {
-            font-size: 14px;
             color: #666;
+
+            line-height: 1.6;
+
+            margin-bottom: 15px;
         }
 
-        /* Logout Button */
+        .project-btn {
+            display: inline-block;
 
-        .logout-btn {
-            background: #dc3545;
+            padding: 8px 15px;
+
+            background: #667eea;
 
             color: white;
 
-            border: none;
-
-            padding: 10px 18px;
+            text-decoration: none;
 
             border-radius: 6px;
 
-            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .project-btn:hover {
+            background: #764ba2;
+        }
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .skill {
+            padding: 10px 18px;
+
+            background: linear-gradient(
+                135deg,
+                #667eea,
+                #764ba2
+            );
+
+            color: white;
+
+            border-radius: 20px;
 
             font-size: 14px;
         }
 
-        .logout-btn:hover {
-            background: #b02a37;
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.1);
+
+            margin-top: 30px;
         }
 
-        /* Responsive */
+        .contact p {
+            margin: 10px 0;
+
+            color: #555;
+        }
+
+        /* =========================
+           LOGOUT BUTTON
+        ========================= */
+
+        .logout-btn {
+            margin-top: 30px;
+
+            width: 100%;
+
+            padding: 12px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #ff4757;
+
+            color: white;
+
+            font-size: 15px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .logout-btn:hover {
+            background: #e84118;
+
+            transform: scale(1.03);
+        }
+
+        /* =========================
+           DARK MODE
+        ========================= */
+
+        body.dark {
+            background: #121212;
+
+            color: white;
+        }
+
+        body.dark .profile,
+        body.dark .card,
+        body.dark .contact {
+            background: #1e1e1e;
+
+            color: white;
+        }
+
+        body.dark .profile p,
+        body.dark .card p,
+        body.dark .contact p {
+            color: #ccc;
+        }
+
+        body.dark .topbar h1,
+        body.dark .section-title {
+            color: #a29bfe;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
 
         @media (max-width: 768px) {
 
-            nav {
-                flex-direction: column;
-                gap: 15px;
+            .sidebar {
+                position: relative;
+
+                width: 100%;
+
+                height: auto;
             }
 
-            nav ul {
+            .sidebar ul {
+                display: flex;
+
                 flex-wrap: wrap;
+
                 justify-content: center;
             }
 
-            .container {
-                padding: 30px 15px;
+            .sidebar ul li {
+                margin: 5px;
+            }
+
+            .logout-btn {
+                width: 200px;
+
+                display: block;
+
+                margin: 20px auto;
+            }
+
+            .main {
+                margin-left: 0;
+
+                padding: 20px;
+            }
+
+            .profile {
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+            .topbar {
+                flex-direction: column;
+
+                gap: 15px;
             }
 
         }
 
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- Navigation Bar -->
 
-    <nav>
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
 
-        <h2>Umesh Project</h2>
+    <div class="sidebar">
+
+        <h2>🚀 Umesh Project</h2>
 
         <ul>
 
             <li>
-                <a href="#">Home</a>
+                <a href="#home">🏠 Home</a>
             </li>
 
             <li>
-                <a href="#profile">Profile</a>
+                <a href="#profile">👤 Profile</a>
             </li>
 
             <li>
-                <a href="#about">About</a>
+                <a href="#projects">💼 Projects</a>
             </li>
 
             <li>
-                <a href="#contact">Contact</a>
+                <a href="#skills">🛠 Skills</a>
             </li>
 
             <li>
-                <button class="logout-btn" onclick="logout()">
-                    Logout
-                </button>
+                <a href="#contact">📞 Contact</a>
             </li>
 
         </ul>
 
-    </nav>
+        <button
+            class="logout-btn"
+            onclick="logout()">
+            🚪 Logout
+        </button>
+
+    </div>
 
 
-    <!-- Main Content -->
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
 
-    <div class="container">
-
-        <h1>Welcome to the Umesh Project 🎉</h1>
-
-        <p>
-            You have successfully logged in.
-        </p>
+    <div class="main">
 
 
-        <!-- Cards -->
+        <!-- TOP BAR -->
 
-        <div class="cards">
+        <div class="topbar" id="home">
 
-            <div class="card" id="profile">
+            <h1>
+                Welcome, Umesh! 👋
+            </h1>
 
-                <h3>👤 Profile</h3>
+            <button
+                class="dark-btn"
+                onclick="toggleDarkMode()">
 
-                <p>
-                    Username: Umesh
-                </p>
+                🌙 Dark Mode
 
+            </button>
+
+        </div>
+
+
+        <!-- PROFILE -->
+
+        <div
+            class="profile"
+            id="profile">
+
+            <div class="profile-icon">
+                👤
             </div>
 
+            <div>
 
-            <div class="card" id="about">
-
-                <h3>ℹ️ About</h3>
+                <h2>
+                    Umesh Kamkhede
+                </h2>
 
                 <p>
-                    This is my first Login and Dashboard project.
+                    Electrical Engineer | Aspiring DevOps Engineer
                 </p>
 
-            </div>
-
-
-            <div class="card" id="contact">
-
-                <h3>📞 Contact</h3>
-
                 <p>
-                    Email: umesh@example.com
+                    Passionate about Technology, Automation and Web Development.
                 </p>
 
             </div>
 
         </div>
 
+
+        <!-- PROJECTS -->
+
+        <h2
+            class="section-title"
+            id="projects">
+
+            💼 My Projects
+
+        </h2>
+
+
+        <div class="projects">
+
+
+            <!-- Project 1 -->
+
+            <div class="card">
+
+                <h3>
+                    🚗 Smart Car Parking System
+                </h3>
+
+                <p>
+                    Diploma project designed to help users
+                    identify available parking spaces efficiently.
+                </p>
+
+                <p>
+                    <b>Technology:</b>
+                    Arduino, IR Sensors, Servo Motor, LCD
+                </p>
+
+            </div>
+
+
+            <!-- Project 2 -->
+
+            <div class="card">
+
+                <h3>
+                    💻 Login & Dashboard Web Application
+                </h3>
+
+                <p>
+                    Responsive login and dashboard application
+                    developed using HTML, CSS and JavaScript.
+                </p>
+
+                <p>
+                    <b>Technology:</b>
+                    HTML, CSS, JavaScript, Git, GitHub
+                </p>
+
+                <a
+                    class="project-btn"
+                    href="https://ukamkhede-hub.github.io/login-page/"
+                    target="_blank">
+
+                    View Project
+
+                </a>
+
+            </div>
+
+
+            <!-- Project 3 -->
+
+            <div class="card">
+
+                <h3>
+                    ⚙️ DevOps Learning
+                </h3>
+
+                <p>
+                    Learning and practicing DevOps tools,
+                    CI/CD pipelines, Docker, Jenkins and GitHub Actions.
+                </p>
+
+                <p>
+                    <b>Tools:</b>
+                    Git, Docker, Jenkins, Linux
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- SKILLS -->
+
+        <h2
+            class="section-title"
+            id="skills">
+
+            🛠 Technical Skills
+
+        </h2>
+
+
+        <div class="skills">
+
+            <span class="skill">HTML</span>
+
+            <span class="skill">CSS</span>
+
+            <span class="skill">JavaScript</span>
+
+            <span class="skill">Git</span>
+
+            <span class="skill">GitHub</span>
+
+            <span class="skill">Linux</span>
+
+            <span class="skill">Docker</span>
+
+            <span class="skill">Jenkins</span>
+
+            <span class="skill">CI/CD</span>
+
+            <span class="skill">GitHub Actions</span>
+
+        </div>
+
+
+        <!-- CONTACT -->
+
+        <div
+            class="contact"
+            id="contact">
+
+            <h2>
+                📞 Contact
+            </h2>
+
+            <p>
+                📧 Email: umesh@example.com
+            </p>
+
+            <p>
+                📱 Phone: +91 XXXXX XXXXX
+            </p>
+
+            <p>
+                📍 Location: Maharashtra, India
+            </p>
+
+        </div>
+
+
     </div>
 
 
-    <!-- JavaScript -->
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
 
     <script>
+
+        // Dark Mode
+
+        function toggleDarkMode() {
+
+            document.body.classList.toggle("dark");
+
+        }
+
+
+        // Logout
 
         function logout() {
 
@@ -266,5 +727,7 @@
 
     </script>
 
+
 </body>
+
 </html>
