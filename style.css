@@ -1,237 +1,458 @@
-<style>
+/* =========================
+   RESET
+========================= */
 
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
 }
+
+
+/* =========================
+   BODY
+========================= */
 
 body {
-    font-family: Arial, sans-serif;
+
     min-height: 100vh;
 
-    background: linear-gradient(
-        135deg,
-        #667eea,
-        #764ba2,
-        #f093fb
-    );
+    font-family:
+        Arial,
+        sans-serif;
+
+    background-image:
+        linear-gradient(
+            rgba(10, 20, 50, 0.25),
+            rgba(5, 15, 35, 0.65)
+        ),
+        url("mountain.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
 }
 
-/* Navigation Bar */
 
-nav {
-    background: rgba(255, 255, 255, 0.15);
+/* =========================
+   LOGIN CONTAINER
+========================= */
 
-    backdrop-filter: blur(10px);
+.login-container {
 
-    color: white;
+    min-height: 100vh;
 
-    padding: 18px 35px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-nav h2 {
-    font-size: 24px;
-}
-
-nav ul {
-    list-style: none;
-
-    display: flex;
-    align-items: center;
-
-    gap: 25px;
-}
-
-nav ul li a {
-    color: white;
-
-    text-decoration: none;
-
-    font-size: 16px;
-
-    transition: 0.3s;
-}
-
-nav ul li a:hover {
-    color: #ffeaa7;
-
-    transform: scale(1.1);
-}
-
-/* Main Content */
-
-.container {
-    padding: 60px 20px;
-
-    text-align: center;
-}
-
-.container h1 {
-    color: white;
-
-    font-size: 38px;
-
-    margin-bottom: 15px;
-
-    text-shadow:
-        0 3px 10px rgba(0, 0, 0, 0.3);
-}
-
-.container > p {
-    color: white;
-
-    font-size: 20px;
-
-    margin-bottom: 40px;
-}
-
-/* Cards */
-
-.cards {
     display: flex;
 
     justify-content: center;
 
-    gap: 30px;
+    align-items: center;
 
-    flex-wrap: wrap;
+    padding: 20px;
+
 }
 
-.card {
-    width: 260px;
 
-    padding: 35px 25px;
+/* =========================
+   GLASS LOGIN BOX
+========================= */
+
+.login-box {
+
+    width: 500px;
+
+    padding: 55px 70px;
 
     border-radius: 20px;
 
-    background: rgba(255, 255, 255, 0.9);
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.15
+        );
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.25
+        );
 
     box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.2);
+        0 20px 50px
+        rgba(
+            0,
+            0,
+            0,
+            0.35
+        );
 
-    transition: 0.4s;
-
-    border-top: 5px solid #667eea;
 }
 
-.card:hover {
-    transform: translateY(-12px) scale(1.03);
 
-    box-shadow:
-        0 20px 40px rgba(0, 0, 0, 0.3);
-}
+/* =========================
+   TITLE
+========================= */
 
-.card h3 {
-    font-size: 22px;
+.login-box h1 {
 
-    color: #764ba2;
-
-    margin-bottom: 15px;
-}
-
-.card p {
-    font-size: 15px;
-
-    color: #666;
-
-    line-height: 1.6;
-}
-
-/* Different Card Colors */
-
-.card:nth-child(1) {
-    border-top-color: #ff6b6b;
-}
-
-.card:nth-child(1) h3 {
-    color: #ff6b6b;
-}
-
-.card:nth-child(2) {
-    border-top-color: #00b894;
-}
-
-.card:nth-child(2) h3 {
-    color: #00b894;
-}
-
-.card:nth-child(3) {
-    border-top-color: #0984e3;
-}
-
-.card:nth-child(3) h3 {
-    color: #0984e3;
-}
-
-/* Logout Button */
-
-.logout-btn {
-    background: linear-gradient(
-        135deg,
-        #ff416c,
-        #ff4b2b
-    );
+    text-align: center;
 
     color: white;
 
+    font-size: 34px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 50px;
+
+}
+
+
+/* =========================
+   INPUT BOX
+========================= */
+
+.input-box {
+
+    position: relative;
+
+    margin-bottom: 35px;
+
+}
+
+
+/* INPUT */
+
+.input-box input {
+
+    width: 100%;
+
+    padding:
+        14px
+        40px
+        14px
+        10px;
+
+    background:
+        transparent;
+
     border: none;
 
-    padding: 10px 20px;
+    border-bottom:
+        2px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.65
+        );
 
-    border-radius: 20px;
+    outline: none;
+
+    color: white;
+
+    font-size: 18px;
+
+}
+
+
+/* PLACEHOLDER */
+
+.input-box input::placeholder {
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.9
+        );
+
+    font-size: 18px;
+
+}
+
+
+/* INPUT FOCUS */
+
+.input-box input:focus {
+
+    border-bottom:
+        2px solid
+        white;
+
+}
+
+
+/* ICON */
+
+.input-box span {
+
+    position: absolute;
+
+    right: 5px;
+
+    top: 12px;
+
+    color: white;
+
+    font-size: 20px;
 
     cursor: pointer;
 
+}
+
+
+/* =========================
+   FORGOT PASSWORD
+========================= */
+
+.forgot {
+
+    text-align: right;
+
+    margin-top: -20px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.forgot a {
+
+    color: white;
+
+    text-decoration: none;
+
     font-size: 14px;
 
-    transition: 0.3s;
 }
 
-.logout-btn:hover {
-    transform: scale(1.1);
+
+.forgot a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* =========================
+   REMEMBER ME
+========================= */
+
+.remember {
+
+    margin-bottom: 30px;
+
+}
+
+
+.remember label {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+}
+
+
+.remember input {
+
+    width: 20px;
+
+    height: 20px;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+
+.login-btn {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #65a9ff,
+            #8bc4ff
+        );
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        0.3s;
+
+}
+
+
+/* BUTTON HOVER */
+
+.login-btn:hover {
+
+    transform:
+        translateY(-3px);
 
     box-shadow:
-        0 5px 15px rgba(255, 65, 108, 0.5);
+        0 10px 25px
+        rgba(
+            0,
+            0,
+            0,
+            0.3
+        );
+
 }
 
-/* Responsive Design */
 
-@media (max-width: 768px) {
+/* =========================
+   MESSAGE
+========================= */
 
-    nav {
-        flex-direction: column;
+#message {
 
-        gap: 15px;
+    text-align: center;
 
-        text-align: center;
+    margin-top: 15px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================
+   REGISTER
+========================= */
+
+.register {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    margin-top: 30px;
+
+    color: white;
+
+    font-size: 16px;
+
+}
+
+
+.register a {
+
+    color: white;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+}
+
+
+.register a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media
+(max-width: 600px) {
+
+
+    .login-box {
+
+        width: 100%;
+
+        padding:
+            40px 25px;
+
     }
 
-    nav ul {
-        flex-wrap: wrap;
 
-        justify-content: center;
-    }
+    .login-box h1 {
 
-    .container {
-        padding: 40px 15px;
-    }
-
-    .container h1 {
         font-size: 28px;
+
+        margin-bottom: 40px;
+
     }
 
-    .card {
-        width: 90%;
-        max-width: 350px;
+
+    .register {
+
+        flex-direction:
+            column;
+
+        gap: 10px;
+
     }
+
 
 }
+body {
+    min-height: 100vh;
 
-</style>
+    background-image:
+        linear-gradient(
+            rgba(10, 20, 50, 0.25),
+            rgba(5, 15, 35, 0.65)
+        ),
+        url("mountain.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
