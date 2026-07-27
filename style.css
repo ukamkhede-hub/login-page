@@ -46,17 +46,14 @@ body {
 ========================= */
 
 .login-container {
-
+    width: 100%;
     min-height: 100vh;
 
     display: flex;
-
     justify-content: center;
-
     align-items: center;
 
     padding: 20px;
-
 }
 
 
@@ -444,15 +441,17 @@ body {
 }
 body {
     min-height: 100vh;
+    font-family: Arial, sans-serif;
 
-    background-image:
+    background:
         linear-gradient(
-            rgba(10, 20, 50, 0.25),
-            rgba(5, 15, 35, 0.65)
-        ),
-        url("mountain.jpg");
+            135deg,
+            #c7d9ff 0%,
+            #8ec5fc 45%,
+            #667eea 100%
+        );
 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
