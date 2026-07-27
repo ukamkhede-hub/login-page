@@ -21,22 +21,140 @@ body {
 
     min-height: 100vh;
 
-    font-family:
-        Arial,
-        sans-serif;
+    font-family: Arial, sans-serif;
 
-    background-image:
+    overflow: hidden;
+
+    background:
         linear-gradient(
-            rgba(10, 20, 50, 0.25),
-            rgba(5, 15, 35, 0.65)
-        ),
-        url("mountain.jpg");
+            135deg,
+            #667eea,
+            #764ba2,
+            #f093fb
+        );
 
-    background-size: cover;
+}
 
-    background-position: center;
 
-    background-repeat: no-repeat;
+/* =========================
+   ANIMATED BACKGROUND
+========================= */
+
+.background {
+
+    position: fixed;
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    z-index: 0;
+
+}
+
+
+/* Animated Circles */
+
+.circle {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(5px);
+
+    opacity: 0.5;
+
+    animation:
+        move 10s infinite alternate ease-in-out;
+
+}
+
+
+/* Circle 1 */
+
+.circle1 {
+
+    width: 300px;
+
+    height: 300px;
+
+    background: #00f2fe;
+
+    top: -100px;
+
+    left: -100px;
+
+}
+
+
+/* Circle 2 */
+
+.circle2 {
+
+    width: 400px;
+
+    height: 400px;
+
+    background: #ff00cc;
+
+    bottom: -150px;
+
+    right: -100px;
+
+    animation-delay: 2s;
+
+}
+
+
+/* Circle 3 */
+
+.circle3 {
+
+    width: 200px;
+
+    height: 200px;
+
+    background: #ffff00;
+
+    top: 40%;
+
+    left: 60%;
+
+    animation-delay: 4s;
+
+}
+
+
+/* Animation */
+
+@keyframes move {
+
+    0% {
+
+        transform:
+            translate(0, 0)
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translate(100px, -50px)
+            scale(1.2);
+
+    }
+
+    100% {
+
+        transform:
+            translate(-50px, 100px)
+            scale(0.9);
+
+    }
 
 }
 
@@ -46,26 +164,33 @@ body {
 ========================= */
 
 .login-container {
-    width: 100%;
+
+    position: relative;
+
+    z-index: 1;
+
     min-height: 100vh;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     padding: 20px;
+
 }
 
 
 /* =========================
-   GLASS LOGIN BOX
+   LOGIN BOX
 ========================= */
 
 .login-box {
 
-    width: 500px;
+    width: 420px;
 
-    padding: 55px 70px;
+    padding: 45px;
 
     border-radius: 20px;
 
@@ -78,10 +203,10 @@ body {
         );
 
     backdrop-filter:
-        blur(12px);
+        blur(15px);
 
     -webkit-backdrop-filter:
-        blur(12px);
+        blur(15px);
 
     border:
         1px solid
@@ -89,7 +214,7 @@ body {
             255,
             255,
             255,
-            0.25
+            0.3
         );
 
     box-shadow:
@@ -98,8 +223,36 @@ body {
             0,
             0,
             0,
-            0.35
+            0.3
         );
+
+    animation:
+        fadeIn 1s ease;
+
+}
+
+
+/* Login Animation */
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(40px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
 
 }
 
@@ -114,178 +267,146 @@ body {
 
     color: white;
 
-    font-size: 34px;
+    font-size: 32px;
 
-    letter-spacing: 2px;
-
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 
 }
 
 
-/* =========================
-   INPUT BOX
-========================= */
+.subtitle {
 
-.input-box {
+    text-align: center;
 
-    position: relative;
+    color: white;
+
+    opacity: 0.9;
 
     margin-bottom: 35px;
 
 }
 
 
-/* INPUT */
-
-.input-box input {
-
-    width: 100%;
-
-    padding:
-        14px
-        40px
-        14px
-        10px;
-
-    background:
-        transparent;
-
-    border: none;
-
-    border-bottom:
-        2px solid
-        rgba(
-            255,
-            255,
-            255,
-            0.65
-        );
-
-    outline: none;
-
-    color: white;
-
-    font-size: 18px;
-
-}
-
-
-/* PLACEHOLDER */
-
-.input-box input::placeholder {
-
-    color:
-        rgba(
-            255,
-            255,
-            255,
-            0.9
-        );
-
-    font-size: 18px;
-
-}
-
-
-/* INPUT FOCUS */
-
-.input-box input:focus {
-
-    border-bottom:
-        2px solid
-        white;
-
-}
-
-
-/* ICON */
-
-.input-box span {
-
-    position: absolute;
-
-    right: 5px;
-
-    top: 12px;
-
-    color: white;
-
-    font-size: 20px;
-
-    cursor: pointer;
-
-}
-
-
 /* =========================
-   FORGOT PASSWORD
+   INPUT
 ========================= */
 
-.forgot {
+.input-box {
 
-    text-align: right;
-
-    margin-top: -20px;
+    position: relative;
 
     margin-bottom: 25px;
 
 }
 
 
-.forgot a {
+.input-box input {
+
+    width: 100%;
+
+    padding: 14px 45px 14px 15px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.2
+        );
 
     color: white;
 
-    text-decoration: none;
+    font-size: 16px;
+
+}
+
+
+.input-box input::placeholder {
+
+    color: white;
+
+    opacity: 0.9;
+
+}
+
+
+/* Input Icon */
+
+.input-box span {
+
+    position: absolute;
+
+    right: 15px;
+
+    top: 12px;
+
+    font-size: 20px;
+
+    color: white;
+
+}
+
+
+/* Password Icon */
+
+.password-icon {
+
+    cursor: pointer;
+
+}
+
+
+/* =========================
+   OPTIONS
+========================= */
+
+.options {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+    color: white;
 
     font-size: 14px;
 
 }
 
 
-.forgot a:hover {
-
-    text-decoration: underline;
-
-}
-
-
-/* =========================
-   REMEMBER ME
-========================= */
-
-.remember {
-
-    margin-bottom: 30px;
-
-}
-
-
-.remember label {
+.options label {
 
     display: flex;
 
     align-items: center;
 
-    gap: 10px;
-
-    color: white;
-
-    font-size: 16px;
-
-    cursor: pointer;
+    gap: 6px;
 
 }
 
 
-.remember input {
+.options a {
 
-    width: 20px;
+    color: white;
 
-    height: 20px;
+    text-decoration: none;
 
-    cursor: pointer;
+}
+
+
+.options a:hover {
+
+    text-decoration: underline;
 
 }
 
@@ -307,25 +428,22 @@ body {
     background:
         linear-gradient(
             135deg,
-            #65a9ff,
-            #8bc4ff
+            #00c6ff,
+            #0072ff
         );
 
     color: white;
 
-    font-size: 18px;
+    font-size: 17px;
 
     font-weight: bold;
 
     cursor: pointer;
 
-    transition:
-        0.3s;
+    transition: 0.3s;
 
 }
 
-
-/* BUTTON HOVER */
 
 .login-btn:hover {
 
@@ -354,8 +472,6 @@ body {
 
     margin-top: 15px;
 
-    font-size: 15px;
-
     font-weight: bold;
 
 }
@@ -367,18 +483,11 @@ body {
 
 .register {
 
-    display: flex;
+    text-align: center;
 
-    justify-content:
-        space-between;
-
-    align-items: center;
-
-    margin-top: 30px;
+    margin-top: 25px;
 
     color: white;
-
-    font-size: 16px;
 
 }
 
@@ -406,52 +515,24 @@ body {
 ========================= */
 
 @media
-(max-width: 600px) {
-
+(max-width: 500px) {
 
     .login-box {
 
         width: 100%;
 
-        padding:
-            40px 25px;
+        padding: 30px 25px;
 
     }
 
 
-    .login-box h1 {
-
-        font-size: 28px;
-
-        margin-bottom: 40px;
-
-    }
-
-
-    .register {
+    .options {
 
         flex-direction:
             column;
 
-        gap: 10px;
+        gap: 15px;
 
     }
 
-
-}
-body {
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-
-    background:
-        linear-gradient(
-            135deg,
-            #c7d9ff 0%,
-            #8ec5fc 45%,
-            #667eea 100%
-        );
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
